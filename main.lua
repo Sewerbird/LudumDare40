@@ -13,8 +13,8 @@ GS = Gamestate.new() --Gamestate
 
 
 function love.load(args)
-  Assets = require(F"ludumdare40/assets/import")(F"ludumdare40/assets/",Assets)
-  require(F"ludumdare40/main"):load()
+  Assets = require(F"cadsimulator/assets/import")(F"cadsimulator/assets/",Assets)
+  require(F"cadsimulator/main"):load()
 end
 
 function love.touchpressed(id,x,y)

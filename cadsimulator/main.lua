@@ -2,9 +2,9 @@ local Scene = require('core/Scene')
 local Shape = require('core/components/Shape')
 local Stead = require('core/components/Stead')
 
-local Layer = require('ludumdare40/Layer')
-local Board = require('ludumdare40/Board')
-local Level = require('ludumdare40/Level')
+local Layer = require('cadsimulator/Layer')
+local Board = require('cadsimulator/Board')
+local Level = require('cadsimulator/Level')
 
 local CadSimulator = {}
 
@@ -39,7 +39,7 @@ function CadSimulator:load()
   GS[mainScene].message_bus:subscribe(level, "keyboard", GS[level].keyinput)
   GS[mainScene].message_bus:subscribe(level, "tick", GS[level].tick)
   GS[mainScene].message_bus:subscribe(board, "tick", GS[board].tick)
-  GS[board]:layout("ludumdare40/assets/map",mainScene)
+  GS[board]:layout("cadsimulator/assets/map",mainScene)
 
   GS:pushScene(mainScene)
 end

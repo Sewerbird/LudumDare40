@@ -1,10 +1,10 @@
 local Shape = require('core/components/Shape')
 local Stead = require('core/components/Stead')
 local Splat = require('core/components/Splat')
-local Tile = require('ludumdare40/Tile')
-local TheCad = require('ludumdare40/TheCad')
-local Date = require('ludumdare40/Date')
-local Taxi = require('ludumdare40/Taxi')
+local Tile = require('cadsimulator/Tile')
+local TheCad = require('cadsimulator/TheCad')
+local Date = require('cadsimulator/Date')
+local Taxi = require('cadsimulator/Taxi')
 
 local Board = {}
 Board.__index = Board
