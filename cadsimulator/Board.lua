@@ -15,6 +15,7 @@ Board.new = function(init)
   self.stead = init.stead or Stead.new(self.gid)
   return self
 end
+
 Board.create = function(init)
   local n = Board.new(init)
   if n.stead and n.stead.parent then
@@ -22,6 +23,7 @@ Board.create = function(init)
   end
   return GS:add(n)
 end
+
 function Board:tick()
   if self.pendingDate then
     local taxi = self:search('Piece','Taxi')
@@ -32,6 +34,7 @@ function Board:tick()
     end
   end
 end
+
 function Board:searchByDesignation(g_type,designation)
   local result = {}
   assert(designation, F"When you search by designation, you must specify a designation, but got {inspect(designation)}")
@@ -44,6 +47,7 @@ function Board:searchByDesignation(g_type,designation)
   end
   return result
 end
+
 function Board:findAtWorldspace(g_type,tag,worldspace)
   local result = {}
   for gid, _ in pairs(self.stead.children) do
@@ -61,6 +65,7 @@ function Board:findAtWorldspace(g_type,tag,worldspace)
   end
   return result
 end
+
 function Board:search(g_type,tag,row,col,distance)
   local result = {}
   for gid, _ in pairs(self.stead.children) do
@@ -85,6 +90,7 @@ function Board:search(g_type,tag,row,col,distance)
   end
   return result
 end
+
 function Board:sendNewDate(scene)
   local taxi = self:search('Piece','Taxi')
   local piece = {row = -100, col = -100}
@@ -116,6 +122,7 @@ function Board:sendNewDate(scene)
   GS[GS[scene].camera]:refreshCache()
   return theDate
 end
+
 function Board:getSampledLine(src_boardspace, tgt_boardspace,sample_rate)
   local src = {src_boardspace.row + 0.5, src_boardspace.col + 0.5}
   local tgt = {tgt_boardspace.row + 0.5, tgt_boardspace.col + 0.5}
